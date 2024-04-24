@@ -1,0 +1,38 @@
+{
+  "name": "@siriospa/gcp-functions-logger",
+  "private": false,
+  "version": "0.1.0",
+  "description": "Google Cloud Functions logger helpers.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf ./dist && mkdirp ./dist && babel src --out-dir dist --copy-files && copyfiles {package.json,README.md,LICENSE} ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "send": "run-func ./scripts.js send"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siriospa/gcp-functions-logger.git"
+  },
+  "keywords": [
+    "sirio",
+    "google-cloud-platform",
+    "gcp",
+    "gcp-cloud-functions"
+  ],
+  "author": "Lucio Benini <lucio.benini@pittica.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/siriospa/gcp-functions-logger/issues"
+  },
+  "homepage": "https://github.com/siriospa/gcp-functions-logger#README.md",
+  "dependencies": {
+    "date-and-time": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "copyfiles": "^2.4.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "run-func": "^3.0.0"
+  }
+}
