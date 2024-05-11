@@ -13,24 +13,40 @@
 // limitations under the License.
 
 const { formatHeader, formatBody } = require("./format")
+const { send } = require("../connectors/slack")
 
 /**
  * Sends the given message as information.
+ *
  * @param {string} message Message text.
  */
-exports.info = (message) =>
-  console.info(formatHeader("Info"), formatBody(message))
+exports.info = (message) => this.send(message, "Info", console.info)
 
 /**
  * Sends the given message as error.
+ *
  * @param {string} message Message text.
  */
-exports.error = (message) =>
-  console.error(formatHeader("Error"), formatBody(message))
+exports.error = (message) => this.send(message, "Error", console.error)
 
 /**
  * Sends the given message as success.
+ *
  * @param {string} message Message text.
  */
-exports.success = (message) =>
-  console.log(formatHeader("Success"), formatBody(message))
+exports.success = (message) => this.send(message, "Success")
+
+/**
+ * Sends the given message
+ *
+ * @param {string} message Message text.
+ * @param {string} header Header text.
+ * @param {function} func Log function.
+ *
+ * @returns {void}
+ */
+exports.send = (message, header = "Info", func = console.log) => {
+  func(formatHeader(header), formatBody(message))
+
+  send(header, message)
+}
