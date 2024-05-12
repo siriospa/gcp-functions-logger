@@ -36,7 +36,7 @@ exports.send = async (header, message) => {
       fields.push({
         type: "plain_text",
         emoji: true,
-        text,
+        text: text.toString(),
       })
     )
 
