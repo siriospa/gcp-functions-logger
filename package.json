@@ -29,14 +29,14 @@
   "homepage": "https://github.com/siriospa/gcp-functions-logger#README.md",
   "dependencies": {
     "@slack/web-api": "^7.0.4",
-    "date-and-time": "^3.2.0",
+    "date-and-time": "^3.3.0",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.5",
+    "@babel/cli": "^7.24.6",
     "mkdirp": "^3.0.1",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.6",
+    "rimraf": "^5.0.7",
     "run-func": "^3.0.0"
   }
 }

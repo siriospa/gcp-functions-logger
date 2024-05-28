@@ -19,6 +19,8 @@ const { send } = require("../connectors/slack")
  * Sends the given message as information.
  *
  * @param {string} message Message text.
+ *
+ * @returns {string} Message text.
  */
 exports.info = (message) => this.send(message, "Info", console.info)
 
@@ -26,6 +28,8 @@ exports.info = (message) => this.send(message, "Info", console.info)
  * Sends the given message as error.
  *
  * @param {string} message Message text.
+ *
+ * @returns {string} Message text.
  */
 exports.error = (message) => this.send(message, "Error", console.error)
 
@@ -33,6 +37,8 @@ exports.error = (message) => this.send(message, "Error", console.error)
  * Sends the given message as success.
  *
  * @param {string} message Message text.
+ *
+ * @returns {string} Message text.
  */
 exports.success = (message) => this.send(message, "Success")
 
@@ -43,10 +49,12 @@ exports.success = (message) => this.send(message, "Success")
  * @param {string} header Header text.
  * @param {function} func Log function.
  *
- * @returns {void}
+ * @returns {string} Message text.
  */
 exports.send = (message, header = "Info", func = console.log) => {
   func(formatHeader(header), formatBody(message))
 
   send(header, message)
+
+  return message
 }
