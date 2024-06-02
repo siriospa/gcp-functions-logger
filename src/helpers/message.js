@@ -13,7 +13,7 @@
 // limitations under the License.
 
 const { formatHeader, formatBody } = require("./format")
-const { send } = require("../connectors/slack")
+const slack = require("../connectors/slack")
 
 /**
  * Sends the given message as information.
@@ -54,7 +54,7 @@ exports.success = (message) => this.send(message, "Success")
 exports.send = (message, header = "Info", func = console.log) => {
   func(formatHeader(header), formatBody(message))
 
-  send(header, message)
+  slack.send(header, message)
 
   return message
 }

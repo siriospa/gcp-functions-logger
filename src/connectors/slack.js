@@ -26,7 +26,10 @@ require("dotenv").config()
  * @returns {object} Response object.
  */
 exports.send = async (header, message) => {
-  if (process.env.SLACK_TOKEN) {
+  if (
+    process.env.SLACK_TOKEN &&
+    (header !== "Info" || process.env.SLACK_LOG_INFO == 1)
+  ) {
     const client = new WebClient(process.env.SLACK_TOKEN)
 
     const fields = []
@@ -62,4 +65,6 @@ exports.send = async (header, message) => {
       ],
     })
   }
+
+  return null
 }

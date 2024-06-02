@@ -1,7 +1,7 @@
 {
   "name": "@siriospa/gcp-functions-logger",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Google Cloud Functions logger helpers.",
   "main": "dist/index.js",
   "scripts": {
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.6",
     "mkdirp": "^3.0.1",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.0",
     "rimraf": "^5.0.7",
     "run-func": "^3.0.0"
   }
